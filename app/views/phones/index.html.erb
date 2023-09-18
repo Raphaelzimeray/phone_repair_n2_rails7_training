@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Voici les telephones</h1>
+    <% @phones.each do |phone| %>
+      <div class="phone-description">
+        <%= link_to phone_path(phone) do %>
+          <%= phone.brand %>
+          <%= phone.model %>
+          <%= phone.price %>euros
+        <% end %>
+      </div>
+    <% end %>
+</div>
