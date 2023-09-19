@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
+
+
 Phone.destroy_all
 
 phone_1 = Phone.new(
@@ -19,6 +22,8 @@ phone_1 = Phone.new(
 
 )
 
+file = URI.open("https://www.digitaltrends.com/wp-content/uploads/2022/09/iPhone-14-Pro-Back-Purple-Hand.jpg?p=1")
+phone_1.photos.attach(io: file, filename: "14pro.png", content_type: "14pro/png")
 phone_1.save!
 
 puts " #{phone_1.brand} #{phone_1.model} has been created !"
@@ -34,6 +39,8 @@ phone_2 = Phone.new(
   description: "le deuxième meilleur téléphone!"
 )
 
+file = URI.open("https://media.ldlc.com/r1600/ld/products/00/06/00/98/LD0006009811.jpg")
+phone_2.photos.attach(io: file, filename: "s23.png", content_type: "/s23/png")
 phone_2.save!
 
 
@@ -50,6 +57,8 @@ phone_3 = Phone.new(
   description: "le nouvel iphone"
 )
 
+file = URI.open("https://www.notebookcheck.biz/fileadmin/Notebooks/News/_nc3/iphone-15-pro-max-concept.jpg")
+phone_3.photos.attach(io: file, filename: "15pro.png", content_type: "15pro/png")
 phone_3.save!
 
 puts " #{phone_3.brand} #{phone_3.model} has been created !"
