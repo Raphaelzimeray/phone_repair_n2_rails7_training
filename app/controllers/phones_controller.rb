@@ -9,7 +9,16 @@ class PhonesController < ApplicationController
   end
 
 
+  def new
+    @phone = Phone.new
+  end
 
+  def create
+    @phone = Phone.new(phone_params)
+    @phone.save
+    redirect_to phone_path(@phone)
+  end
+  
   private
 
   def phone_params
