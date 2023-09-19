@@ -10,7 +10,9 @@
         <% end %>
       </div>
     <% end %>
-    <div class="link-new-phone">
-      <%= link_to "Ajouter un téléphone", new_phone_path %>
+    <div class="new-phone">
+      <% if policy(Phone).create? %>
+        <%= link_to "Creer un nouveau telephone", new_phone_path%>
+      <% end%>
     </div>
 </div>
