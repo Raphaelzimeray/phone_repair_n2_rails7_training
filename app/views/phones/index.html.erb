@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Voici les telephones</h1>
+    <% @phones.each do |phone| %>
+      <div class="phone-description">
+        <%= link_to phone_path(phone) do %>
+          <%= cl_image_tag phone.photos.first.key, height: 300, width: 400, crop: :fill %>
+          <%= phone.brand %>
+          <%= phone.model %>
+          <%= phone.price %>euros
+        <% end %>
+      </div>
+    <% end %>
+    <div class="link-new-phone">
+      <%= link_to "Ajouter un téléphone", new_phone_path %>
+    </div>
+</div>

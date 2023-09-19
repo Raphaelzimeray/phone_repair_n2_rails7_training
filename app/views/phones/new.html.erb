@@ -1,0 +1,13 @@
+<div class="container">
+  <%= simple_form_for(@phone) do |f| %>
+    <%= f.input :brand %>
+    <%= f.input :model %>
+    <%= f.input :price %>
+    <%= f.input :capacity_go %>
+    <%= f.input :color %>
+    <%= f.input :camera %>
+    <%= f.input :description %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
+    <%= f.submit "Ajouter le nouveau telephone", class: "btn btn-primary" %>
+  <% end %>
+</div>

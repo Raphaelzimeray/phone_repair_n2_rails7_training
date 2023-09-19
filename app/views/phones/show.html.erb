@@ -1,0 +1,16 @@
+<div class="container">
+  <h1> Voici votre telephone</h1>
+
+  <div class="show-phone">
+    <%= @phone.brand %>
+    <%= @phone.model %>
+    <%= @phone.price %>
+    <%= @phone.color %>
+    <%= @phone.description %>
+    <%= @phone.capacity_go %>
+    <%= @phone.camera %>
+    <% @phone.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  </div>
+</div>
