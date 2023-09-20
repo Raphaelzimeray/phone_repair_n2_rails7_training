@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :phones do
       resources :buys, only: [:new, :create]
     end
-    resources :buys, only: [:index]
+    resources :buys, only: [:index, :show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="h1-buys-phone"> Voici les achats</h1>
+    <ul class="index-buy">
+      <% @buys.each do |buy| %>
+        <li class="li-index-buys">Marque: <%= buy.phone.brand %></li>
+        <li class="li-index-buys">Modèle: <%= buy.phone.model %></li>
+        <li class="li-index-buys">Prix: <%= buy.phone.price %> </li>
+        <li class="li-index-buys"> Capacité: <%= buy.phone.capacity_go %> </li>
+        <li class="li-index-buys">Couleur: <%= buy.phone.color %></li>
+        <li class="li-index-buys"> Appareil Photo: <%= buy.phone.camera %></li>
+        <li class="li-index-buys"> Avis: <%= buy.phone.description %> </li>
+        <%= cl_image_tag buy.phone.photos.first.key, height: 300, crop: :fill, id:"phone-buy-index" %>
+      <% end %>
+    </ul>
+</div>
