@@ -13,4 +13,17 @@
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   </div>
+  <div class="update-phone">
+    <% if policy(@phone).edit? %>
+      <%= link_to "Modifier les informations", edit_phone_path(@phone)%>
+    <% end %>
+  </div>
+  <div class="delete-the-phone">
+    <% if policy(@phone).destroy? %>
+    <%= link_to "Supprimer le telephone",phone_path(@phone), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end %>
+  </div>
+  <div class="buy-the-phone">
+    <%= link_to "Acheter le telephone", phone_buys_path(@phone), data: {turbo_method: :post, turbo_confirm: "Are you sure?"}%>
+  </div>
 </div>
