@@ -4,6 +4,9 @@ class PhonesController < ApplicationController
 
   def index
     @phones = policy_scope(Phone)
+    if params[:query].present?
+      @phones = @phones.where("brand ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show

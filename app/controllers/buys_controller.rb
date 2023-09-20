@@ -16,7 +16,7 @@ class BuysController < ApplicationController
     @buy.phone = @phone
     @buy.user = current_user
     @buy.save
-    redirect_to buys_path
+    redirect_to buy_path(@buy) # avoir l'id du buy comme on fait pour un link_to vers une show dans le html
     authorize @buy
   end
 end
