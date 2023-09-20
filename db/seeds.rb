@@ -109,9 +109,9 @@ phone_6 = Phone.new(
   brand: "Honor",
   model: "Magic 5 PRO",
   color: "Vert",
-  price: 1200
-  capacity_go: 512
-  camera: "50px"
+  price: 1200,
+  capacity_go: 512,
+  camera: "50px",
   description: "Un des leaders du marché"
 )
 
@@ -119,7 +119,6 @@ file = URI.open("https://sf1.cnetfrance.fr/wp-content/uploads/cnet/2023/06/honor
 phone_6.photos.attach(io:file, filename: "magic5pro.png", content_type: "magic5pro/png")
 file = URI.open("https://cdn.lesnumeriques.com/optim/test/20/208737/1225e106-honor-magic-5-pro__1200_1200__332-0-1667-1335.jpg")
 phone_6.photos.attach(io:file, filename: "magic5pro_2.png", content_type: "magic5pro_2/png")
-
 phone_6.save!
 
 puts "#{phone_6.brand} #{phone_6.model} has been created!"
