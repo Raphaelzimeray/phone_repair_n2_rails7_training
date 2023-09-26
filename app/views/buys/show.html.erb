@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="show-buy-h1"> Votre achat</h1>
+    <ul class="show-buys-resume">
+      <li> <%= @buy.phone.brand %></li>
+      <li> <%= @buy.phone.brand %> </li>
+      <li> <%= @buy.phone.price %></li>
+      <li> <%= @buy.phone.capacity_go %></li>
+      <li> <%= @buy.phone.color %></li>
+      <li> <%= @buy.phone.camera %></li>
+      <li> <%= @buy.phone.description %> </li>
+      <%= cl_image_tag @buy.phone.photos.first.key, crop: :fill, id:"phone-buy-show" %>
+    </ul>
+</div>

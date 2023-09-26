@@ -1,18 +1,36 @@
 <div class="container">
-  <h1>Voici les telephones</h1>
+  <div class ="h1-the-phones-parent">
+    <h1>Voici les telephones</h1>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: phones_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="phones-list">
     <% @phones.each do |phone| %>
       <div class="phone-description">
-        <%= link_to phone_path(phone) do %>
-          <%= cl_image_tag phone.photos.first.key, height: 300, width: 400, crop: :fill %>
-          <%= phone.brand %>
-          <%= phone.model %>
-          <%= phone.price %>euros
+        <%= link_to phone_path(phone), class: "link-to-index" do %>
+          <%= cl_image_tag phone.photos.first.key, height: 300, width: 400, crop: :fill, class: "photo-index" %>
+          <div class="phone-specification-index">
+            <p> 📱 <%= phone.brand %> </p>
+            <p> ☎️ <%= phone.model %> </p>
+            <p> 💸 <%= phone.price %> € </p>
+          </div>
         <% end %>
       </div>
     <% end %>
-    <div class="new-phone">
+  </div>
+  <div class="new-phone">
       <% if policy(Phone).create? %>
-        <%= link_to "Creer un nouveau telephone", new_phone_path%>
+        <%= link_to "Creer un nouveau telephone", new_phone_path, class: "new-phone-index-link"%>
       <% end%>
     </div>
 </div>

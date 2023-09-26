@@ -26,4 +26,7 @@
   <div class="buy-the-phone">
     <%= link_to "Acheter le telephone", phone_buys_path(@phone), data: {turbo_method: :post, turbo_confirm: "Are you sure?"}%>
   </div>
+  <div class="go-to-index">
+    <%= link_to "Retourner à l'acceuil", phones_path %>
+  </div>
 </div>
