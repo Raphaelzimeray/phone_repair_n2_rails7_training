@@ -5,7 +5,8 @@ class PhonesController < ApplicationController
   def index
     @phones = policy_scope(Phone)
     if params[:query].present?
-      @phones = @phones.where("brand ILIKE ?", "%#{params[:query]}%")
+      sql_subquery = "brand ILIKE :query OR model ILIKE :query"
+      @phones = @phones.where(sql_subquery, query: "%#{params[:query]}%")
     end
   end
 
