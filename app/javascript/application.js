@@ -3,3 +3,20 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+
+
+// selectionner les li avec queryselectorall
+
+// iterer
+
+// changer le innertext ou innerHTML
+
+const li = document.querySelectorAll(".abba");
+
+console.log(li);
+
+li.forEach((element) => {
+
+  element.innerText = "Hello";
+
+});
