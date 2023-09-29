@@ -154,8 +154,8 @@ phone_8 = Phone.new(
   description: "Un smartphone acessible"
 )
 
-file = URI.open("https://www.cdiscount.com/pdt2/6/0/4/1/700x700/auc8806087045604/rw/telephone-mobile-lg-k52-avec-design-bleu-ecran-6.jpg")$
+file = URI.open("https://www.cdiscount.com/pdt2/6/0/4/1/700x700/auc8806087045604/rw/telephone-mobile-lg-k52-avec-design-bleu-ecran-6.jpg")
 phone_8.photos.attach(io: file, filename: "k52.jpeg", content_type: "k52/jpeg")
 phone_8.save!
 
-puts "#{phone_8.brand} #{phone_8.name} has been created !"
+puts "#{phone_8.brand} #{phone_8.model} has been created !"
