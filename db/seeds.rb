@@ -17,7 +17,7 @@ phone_1 = Phone.new(
   color: "Violet",
   price: 1700,
   capacity_go: 512,
-  camera: "48 px",
+  camera: "48 Mpx",
   description: "le meilleur telephone du marché"
 
 )
@@ -31,11 +31,11 @@ puts " #{phone_1.brand} #{phone_1.model} has been created !"
 
 phone_2 = Phone.new(
   brand: "Samsung",
-  model: "S23",
+  model: " Galaxy S23",
   color: "Noir",
   price: 1300,
   capacity_go: 256,
-  camera: "148 px",
+  camera: "148 Mpx",
   description: "le deuxième meilleur téléphone!"
 )
 
@@ -53,7 +53,7 @@ phone_3 = Phone.new(
   color: "Blanc Glacier",
   price: 1700,
   capacity_go: 512,
-  camera: "48 px",
+  camera: "48 Mpx",
   description: "le nouvel iphone"
 )
 
@@ -70,7 +70,7 @@ phone_4 = Phone.new(
   color: "Gris, vert et bleu",
   price: 550,
   capacity_go: 128,
-  camera: "48px",
+  camera: "48 Mpx",
   description: "superbe telephone, rapport qualité prix imbattable"
 )
 
@@ -90,7 +90,7 @@ phone_5 = Phone.new(
   color: "Jaune",
   price: 265,
   capacity_go: 256,
-  camera: "108px",
+  camera: "108 Mpx",
   description: "Téléphone au prix attractif avec un très bel écran"
 )
 
@@ -108,10 +108,10 @@ puts "#{phone_5.brand} #{phone_5.model} has been created!"
 phone_6 = Phone.new(
   brand: "Honor",
   model: "Magic 5 PRO",
-  color: "Vert",
+  color: "Noir",
   price: 1200,
   capacity_go: 512,
-  camera: "50px",
+  camera: "50 Mpx",
   description: "Un des leaders du marché"
 )
 
@@ -122,3 +122,40 @@ phone_6.photos.attach(io:file, filename: "magic5pro_2.png", content_type: "magic
 phone_6.save!
 
 puts "#{phone_6.brand} #{phone_6.model} has been created!"
+
+
+phone_7 = Phone.new(
+  brand: "Samsung",
+  model: "Galaxy A54",
+  color: "Violet",
+  price: 420,
+  capacity_go: 128,
+  camera: "50 Mpx + 12 Mpx + 5 Mpx",
+  description: "Le smartphone milieu de gamme de Samsung offrant une autonomie de deux jours"
+)
+
+file = URI.open("https://www.notebookcheck.info/fileadmin/Notebooks/Samsung/Galaxy_A54_5G/Bild_Samsung_Galaxy_A54_5G_Teaser.jpg")
+phone_7.photos.attach(io: file, filename: "a54.jpeg", content_type: "a54/jpeg")
+file = URI.open("https://www.tomsguide.fr/content/uploads/sites/2/2023/04/Samsung-Galaxy-A54-Vue-dos-4-MEA-scaled.jpg")
+phone_7.photos.attach(io: file, filename: "a54_2.jpeg", content_type: "a54_2/jpeg")
+phone_7.save!
+
+
+puts "#{phone_7.brand} #{phone_7.model} has been created !"
+
+
+phone_8 = Phone.new(
+  brand: "LG",
+  model: "K52",
+  color: "Violet",
+  price: 164,
+  capacity_go: 48,
+  camera: "48 Mpx",
+  description: "Un smartphone acessible"
+)
+
+file = URI.open("https://www.cdiscount.com/pdt2/6/0/4/1/700x700/auc8806087045604/rw/telephone-mobile-lg-k52-avec-design-bleu-ecran-6.jpg")
+phone_8.photos.attach(io: file, filename: "k52.jpeg", content_type: "k52/jpeg")
+phone_8.save!
+
+puts "#{phone_8.brand} #{phone_8.model} has been created !"
